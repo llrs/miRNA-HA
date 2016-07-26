@@ -67,6 +67,11 @@ if (1/sqrt(ncol(data.wgcna)) ^ sft$powerEstimate * ncol(data.wgcna) >= 0.1) {
   warning("Are you sure of this power?")
 }
 softPower <- sft$powerEstimate
+pdf("scalefree.pdf")
+k <- softConnectivity(data.wgcna, type = "signed", power = softPower)
+hist(k, main = paste("Connectivity for the given power of", softPower))
+scaleFreePlot(k, main = "Check scale free topology\n")
+dev.off()
 adjacency  <- adjacency(data.wgcna, power = softPower, type = "signed")
 
 
