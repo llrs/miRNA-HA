@@ -196,4 +196,5 @@ dev.off()
 # ==============================================================================
 
 moduleColors <- mergedColors
+MEs <- mergedMEs
 save(MEs, moduleColors, file = "miRNA-network.RData")
