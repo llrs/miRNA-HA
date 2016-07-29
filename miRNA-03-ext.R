@@ -111,13 +111,12 @@ coloring <- sapply(colnames(coloring), function(x){
 n <- apply(disease, 2, function(x){sum(!is.na(x))})
 y <- table(moduleColors)
 colors <- substring(names(MEs), 3)
-ylabels <- paste0(names(y[match(names(y), colors)]),
+ylabels <- paste0("ME", names(y[match(names(y), colors)]),
        " (", y, ")")
 # Display the correlation values within a heatmap plot
 labeledHeatmap.multiPage(Matrix = coloring,
                          xLabels = paste0(colnames(disease), " (", n, ")"),
                          yLabels = ylabels,
-                         ySymbols = names(MEs),
                          colorLabels = FALSE,
                          colors = greenWhiteRed(50),
                          textMatrix = textMatrix,
@@ -177,7 +176,7 @@ IM <- list( "mir_146a" = c("black", "tan", "cyan"), # n = 3...
             "mir_422" = c("red", "black"), 
             "mir_182_dico" = c("yellow", "salmon"), 
             "mir_21" = c("midnightblue", "blue"), 
-            # "status_90" = c(), # Not significant
+            "status_90" = c("cyan", "salmon"), # Not significant
             # "gender" = c(), # Not significant
             "age" = c("turquoise", "yellow"), # Almost yellow significancy
             "mir_182" = c( "midnightblue", "yellow"), 
